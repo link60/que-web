@@ -8,6 +8,8 @@ module Que
 
     use Rack::MethodOverride
 
+    set :host_authorization, { permitted_hosts: [] }
+
     set :root, File.expand_path("../../../web", __FILE__)
     set :public_folder, proc { "#{root}/public" }
     set :views, proc { File.expand_path("views", root) }
